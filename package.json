@@ -1,0 +1,21 @@
+{
+  "name": "rap_project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "express-session": "^1.17.0",
+    "hasha": "^5.2.0",
+    "jsdom": "^16.2.2",
+    "mysql2": "^2.1.0",
+    "nodemon": "^2.0.2"
+  }
+}

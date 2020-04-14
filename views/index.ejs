@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<body>
+	<head>
+		<link rel="stylesheet" href="/css/main.css" />
+	</head>
+	<body>
+		<div id="header">
+			<div id="account_section">
+				<img src="/svg/account_icon.svg" id="account" />
+			</div>
+			<div id="play_section">
+				<a href="/play"><button id="play_button">PLAY</button></a>
+			</div>
+			<div>
+				<img src="/svg/logout.svg" id="title_img" />
+			</div>
+		</div>
+		<div id="main2">
+			<div id="forms">
+				<div class="form">
+					<h2 class="op">Sign up</h2>
+					<form action="/signup" method="POST" class="test">
+						<input type="text" name="su_login" placeholder="Login" /><br />
+						<input type="password" name="su_password" placeholder="Password" /><br />
+						<input type="password" name="su_cpassword" placeholder="Confirm password" /><br />
+						<input type="submit" name="su_submit" value="Sign up" />
+					</form>
+				</div>
+				<div class="form">
+					<h2 class="op">Sign in</h2>
+					<form action="/signin" method="POST" class="test">
+						<input type="text" name="si_login" placeholder="Login" /><br />
+						<input type="password" name="si_password" placeholder="Password" /><br />
+						<input type="submit" name="si_submit" value="Sign in" />
+					</form>
+				</div>
+			</div>
+		</div>
+		<div id="main">
+			<div id="text">
+				<p>RapGuesser, a rap test webiste by @jcreux. Enjoy !</p>
+			</div>
+		</div>
+	</body>
+</body>

@@ -1,0 +1,49 @@
+* {
+	margin: 0px;
+	padding: 0px;
+}
+button {
+	width: 70px;
+	height: 30px;
+	margin: 5px 5px 0px 5px;
+	border-radius: 3px;
+}
+.quote_card {
+	border: 2px solid black;
+	margin: 0px 5px 5px 5px;
+	padding: 5px;
+}
+.quote_card:first-child {
+	margin-top: 5px;
+}
+.quote_card p {
+	white-space: pre-line;
+}
+.user_card {
+	border: 2px solid black;
+	margin: 0px 5px 5px 5px;
+	padding: 5px;
+}
+.user_card:first-child {
+	margin-top: 5px;
+}
+.user_card * {
+	display: inline-block;
+}
+.buttons .infos {
+	width: 300px;
+	height: 30px;
+}
+.green_button {
+	background: green;
+}
+.grey_button {
+	background: lightgrey;
+}
+.red_button {
+	background: red;
+}
+.green_button:hover, .grey_button:hover, .red_button:hover {
+	cursor: pointer;
+	background: white;
+}

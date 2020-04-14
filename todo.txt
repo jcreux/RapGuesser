@@ -1,0 +1,64 @@
+PUSH PUSH PUSH
+
+___DEV___________________________________________________________________
+
+- Fichier(s) css
+
+- Statuts (permisssions) 0.membres / 1.admin / 2.root {
+	admin -> peut gerer les propositions (valid/modify/unvalid)
+	root -> idem + peut gerer les statuts des utilisateurs
+}
+
+- Stades de developpement du jeu {
+	1.solo
+	2.duel
+	3.room
+	4.matchmaking
+}
+
+Todo :
+- rename rapp
+- 2 body -> html body sur tous les .ejs
+
+___DRAFT__________________________________________________________________
+
+en tant qu'admin (a continuer) {
+	verif infos/orthographe/ponctuation
+	check la db -> {
+		4 artistes mini
+		4 titres de lartiste mini
+		algo aleatoire pour les 4 dates
+	}
+}
+
+jeu {
+	pour linstant : artiste
+	ensuite : titre puis date de sortie
+}
+
+clean {
+	html / css
+	noms des fonctions / fichiers / dossier
+	etc ...
+}
+
+___MORE___________________________________________________________________
+
+Bugs :
+- Soucis dans play (backpage change anwser / refresh) --> test de mettre la fonction de gen dans check apres la premiere gen au lieu de play tout le temps
+- Bug bouton play lorsque on est pas login
+
+Features :
+- Signalez un problème / fausses infos / bugs
+- Notifications (succes, ...)
+
+Ideas :
+- Ajouter la date d'inscription dans la table users
+- Systeme de succes ?
+- Rename manage -> manage quotes / manage users
+- Inscription : pas deux fois le meme login / email
+
+Infos :
+- Start : 24/03/2020
+
+PUSH PUSH PUSH

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<body>
+	<head>
+		<link rel="stylesheet" href="/css/mini.css" />
+	</head>
+	<body>
+		<div>
+			<% for (i = 0; i < infos.length; i++) { %>
+				<div class="user_card">
+					<div class="buttons">
+						<a href="/upgrade/<%= infos[i].id %>"><button class="green_button">Upgrade</button></a>
+						<a href="/downgrade/<%= infos[i].id %>"><button class="red_button">Downgrade</button></a>
+					</div>
+					<div class="infos">
+						<% if (infos[i].admin === '0') { %>
+							<p>MEMBER - <%= infos[i].username %></p>
+						<% } else if (infos[i].admin === '1') { %>
+							<p>ADMIN - <%= infos[i].username %></p>
+						<% } else if (infos[i].admin === '2') { %>
+							<p>ROOT - <%= infos[i].username %></p>
+						<% } %>
+					</div>
+				</div>
+			<% } %>
+		</div>
+	</body>
+</body>

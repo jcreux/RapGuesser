@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<body>
+	<head>
+		<link rel="stylesheet" href="/css/mini.css" />
+	</head>
+	<body>
+		<div>
+			<% for (i = 0; i < infos.length; i++) { %>
+				<div class="quote_card">
+					<p><%= infos[i].quote %></p>
+					<p>Artist : <%= infos[i].artist %></p>
+					<p>Track : <%= infos[i].track %></p>
+					<p>Year : <%= infos[i].year %></p>
+					<p>Suggested by : <%= usernames[i] %></p>
+					<a href="/valid/<%= infos[i].id %>"><button class="green_button">Valid</button></a>
+					<a href="/modify/<%= infos[i].id %>"><button class="grey_button">Modify</button></a>
+					<a href="/unvalid/<%= infos[i].id %>"><button class="red_button">Unvalid</button></a>
+				</div>
+			<% } %>
+		</div>
+	</body>
+</body>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<style>
+			* {
+				margin: 0px;
+				padding: 0px;
+				text-align: center;
+			}
+			h3 {
+				margin: 10px;
+				white-space: pre-line;
+			}
+			.button {
+				width: 70px;
+				height: 30px;
+				margin: 5px;
+				border-radius: 3px;
+				background: lightgrey;
+			}
+			.button:hover {
+				cursor: pointer;
+				background: white;
+			}
+		</style>
+				<script type="text/javascript">
+					var cpt = 3;
+					var x ;
+					
+					function decompte()
+					{
+						if(cpt>=0)
+						{
+							if(cpt>1)
+							{
+								var sec = " secondes.";
+							} else {
+								var sec = " seconde.";
+							}
+							document.getElementById("Crono").innerHTML = "Redirection dans " + cpt + sec ;
+							cpt-- ;
+							x = setTimeout("decompte()",1000) ;
+						}
+						else
+						{
+							clearTimeout(x) ;
+							document.location.href="/check";
+						}
+					}
+				</script>
+	</head>
+	<body onload="decompte()">
+		<div>
+			<h3><%= quote %></h3>
+			<form action="/check" method="POST">
+				<button class="button" name="button" value="<%= options[0] %>"><%= options[0] %></button>
+				<button class="button" name="button" value="<%= options[1] %>"><%= options[1] %></button>
+				<button class="button" name="button" value="<%= options[2] %>"><%= options[2] %></button>
+				<button class="button" name="button" value="<%= options[3] %>"><%= options[3] %></button>
+			</form>
+		</div>
+		<div id="Crono">
+		</div>
+	</body>
+</html>

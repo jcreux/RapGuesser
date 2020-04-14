@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<body>
+	<head>
+		<link rel="stylesheet" href="/css/main.css" />
+	</head>
+	<body>
+		<div id="header">
+			<div id="account_section">
+				<img src="/svg/account_icon.svg" id="account" />
+			</div>
+			<div id="play_section">
+				<a href="/play"><button id="play_button">PLAY</button></a>
+			</div>
+			<div>
+				<img src="/svg/logout.svg" id="title_img" />
+			</div>
+		</div>
+		<div>
+			<a href="/add"><button>ADD</button></a>
+			<% if (admin === '1') { %>
+				<a href="/manage"><button>MANAGE</button></a>
+			<% } else if (admin === '2') { %>
+				<a href="/manage"><button>MANAGE</button></a>
+				<a href="/list_admin"><button>USERS</button></a>
+			<% } %>
+		</div>
+		<div id="main">
+			<div id="text">
+				<p>RapGuesser, a rap test webiste by @jcreux. Enjoy !</p>
+			</div>
+		</div>
+	</body>
+</body>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<style>
+			h3 {
+				white-space: pre-line;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<% if (token === "ok") { %>
+				<p>bien ouej</p>
+			<% } else if (token === "ko") { %>
+				<p>tro naz</p>
+			<% } %>
+			<h3>"<%= quote %>" - <%= artist %></h3>
+			<a href="/play"><button>PLAY AGAIN</button></a>
+			<a href="/main"><button>MAIN MENU</button></a>
+		</div>
+	</body>
+</html>
