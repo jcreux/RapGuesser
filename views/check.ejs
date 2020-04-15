@@ -2,6 +2,7 @@
 
 <html>
 	<head>
+		<link rel="stylesheet" href="/css/main.css" />
 		<style>
 			h3 {
 				white-space: pre-line;
@@ -9,15 +10,44 @@
 		</style>
 	</head>
 	<body>
-		<div>
+		<div id="header">
+			<div id="account_section">
+				<img src="/svg/account_icon.svg" id="account" />
+			</div>
+			<div id="play_section">
+				<a href="/play"><button id="play_button">PLAY</button></a>
+			</div>
+			<div>
+				<img src="/svg/logout.svg" id="title_img" />
+			</div>
+		</div>
+		<div id="game">
 			<% if (token === "ok") { %>
-				<p>bien ouej</p>
+				<div id="end_crono">Well played</div>
 			<% } else if (token === "ko") { %>
-				<p>tro naz</p>
+				<div id="end_crono">Unlucky</div>
 			<% } %>
-			<h3>"<%= quote %>" - <%= artist %></h3>
-			<a href="/play"><button>PLAY AGAIN</button></a>
-			<a href="/main"><button>MAIN MENU</button></a>
+			<h3 id="quote">"<%= quote %>"</h3>
+			<% for (i = 0; i < options.length; i++) { %>
+				<% if (options[i] === artist) { %>
+					<button class="valid" name="button" value="<%= options[i] %>"><%= options[i] %></button>
+				<% } else { %>
+					<button class="unvalid" name="button" value="<%= options[i] %>"><%= options[i] %></button>
+				<% } %>
+			<% } %>
+			<div>
+				<hr id="hr_menu" />
+				<a href="/main"><button id="main_menu">MAIN MENU</button></a>
+			</div>
+		</div>
+		<div id="main">
+			<div id="text">
+				<p class="footer_sections">About us</p>
+				<p class="footer_sections">Contact</p>
+				<p id="rapguesser">RapGuesser by @jcreux</p>
+				<p class="footer_sections">Report a bug</p>
+				<p class="footer_sections">Help</p>
+			</div>
 		</div>
 	</body>
 </html>

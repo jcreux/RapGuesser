@@ -1,5 +1,7 @@
 ___DEV___________________________________________________________________
 
+- Faire la deconnexion
+
 - Fichier(s) css
 
 - Statuts (permisssions) 0.membres / 1.admin / 2.root {
@@ -15,8 +17,7 @@ ___DEV___________________________________________________________________
 }
 
 Todo :
-- rename rapp
-- 2 body -> html body sur tous les .ejs
+- rename rapguesser
 
 ___DRAFT__________________________________________________________________
 
@@ -41,6 +42,7 @@ clean {
 	html / css / js
 	noms des fonctions / fichiers / dossier
 	etc ...
+	faire un site full fr ou full en
 }
 
 ___MORE___________________________________________________________________

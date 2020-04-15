@@ -73,7 +73,8 @@ exports.getCheck = (req, res) => {
 	res.render("check", {
 		token: "ko",
 		quote: req.session.quote,
-		artist: req.session.artist
+		artist: req.session.artist,
+		options: req.session.artists
 	})
 }
 
@@ -86,13 +87,15 @@ exports.postCheck = (req, res) => {
 		res.render("check", {
 			token: "ok",
 			quote: quote,
-			artist: artist
+			artist: req.session.artist,
+			options: req.session.artists
 		});
 	} else {
 		res.render("check", {
 			token: "ko",
 			quote: quote,
-			artist: artist
+			artist: req.session.artist,
+			options: req.session.artists
 		});
 	}
 }

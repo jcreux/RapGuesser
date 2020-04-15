@@ -1,31 +1,12 @@
 <!DOCTYPE html>
 
-<body>
+<html>
 	<head>
 		<link rel="stylesheet" href="/css/main.css" />
 		<style>
-			* {
-				margin: 0px;
-				padding: 0px;
-				text-align: center;
-			}
 			h3 {
 				margin: 10px;
 				white-space: pre-line;
-			}
-			.button {
-				width: 120px;
-				height: 40px;
-				margin: 10px 0px 0px 30px;
-				background: #ffbf00;
-				font-size: 13px;
-				font-family: Georgia, serif;
-				border: 2px solid black;
-				border-radius: 10px;
-			}
-			.button:hover {
-				cursor: pointer;
-				background: #ffcf40;
 			}
 		</style>
 		<script type="text/javascript">
@@ -67,18 +48,26 @@
 		<div id="game">
 			<div id="crono">
 			</div>
-			<h3 id="quote">"<%= quote %>."</h3>
+			<h3 id="quote">"<%= quote %>"</h3>
 			<form action="/check" method="POST">
 				<button class="button" name="button" value="<%= options[0] %>"><%= options[0] %></button>
 				<button class="button" name="button" value="<%= options[1] %>"><%= options[1] %></button>
 				<button class="button" name="button" value="<%= options[2] %>"><%= options[2] %></button>
 				<button class="button" name="button" value="<%= options[3] %>"><%= options[3] %></button>
 			</form>
+			<div>
+				<hr id="hr_menu" />
+				<a href="/main"><button id="main_menu">MAIN MENU</button></a>
+			</div>
 		</div>
 		<div id="main">
 			<div id="text">
-				<p>RapGuesser, a rap quiz webiste by @jcreux. Enjoy !</p>
+				<p class="footer_sections">About us</p>
+				<p class="footer_sections">Contact</p>
+				<p id="rapguesser">RapGuesser by @jcreux</p>
+				<p class="footer_sections">Report a bug</p>
+				<p class="footer_sections">Help</p>
 			</div>
 		</div>
 	</body>
-</body>
+</html>
