@@ -1,5 +1,3 @@
-PUSH PUSH PUSH
-
 ___DEV___________________________________________________________________
 
 - Fichier(s) css
@@ -29,6 +27,9 @@ en tant qu'admin (a continuer) {
 		4 titres de lartiste mini
 		algo aleatoire pour les 4 dates
 	}
+	quote {
+		4 lignes max -> doit pouvoir etre trouver en 30 secondes.
+	}
 }
 
 jeu {
@@ -37,7 +38,7 @@ jeu {
 }
 
 clean {
-	html / css
+	html / css / js
 	noms des fonctions / fichiers / dossier
 	etc ...
 }
@@ -60,5 +61,3 @@ Ideas :
 
 Infos :
 - Start : 24/03/2020
-
-PUSH PUSH PUSH

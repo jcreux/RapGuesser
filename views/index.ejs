@@ -21,25 +21,29 @@
 				<div class="form">
 					<h2 class="op">Sign up</h2>
 					<form action="/signup" method="POST" class="test">
-						<input type="text" name="su_login" placeholder="Login" /><br />
-						<input type="password" name="su_password" placeholder="Password" /><br />
-						<input type="password" name="su_cpassword" placeholder="Confirm password" /><br />
-						<input type="submit" name="su_submit" value="Sign up" />
+						<input class="input" type="text" name="su_login" placeholder="Username" /><br />
+						<input class="input" type="email" name="su_email" placeholder="Email" /><br />
+						<input class="input" type="password" name="su_password" placeholder="Password" /><br />
+						<input class="input" type="password" name="su_cpassword" placeholder="Confirm password" /><br />
+						<hr class="border" />
+						<input class="submit" type="submit" name="su_submit" value="Sign up" />
 					</form>
 				</div>
 				<div class="form">
 					<h2 class="op">Sign in</h2>
 					<form action="/signin" method="POST" class="test">
-						<input type="text" name="si_login" placeholder="Login" /><br />
-						<input type="password" name="si_password" placeholder="Password" /><br />
-						<input type="submit" name="si_submit" value="Sign in" />
+						<input class="input" type="text" name="si_login" placeholder="Username" /><br />
+						<input class="input" type="password" name="si_password" placeholder="Password" /><br />
+						<hr class="border" />
+						<a><h4 id="fpasswd">Forgot your password ?</h4></a>
+						<input class="submit" id="signin_button" type="submit" name="si_submit" value="Sign in" />
 					</form>
 				</div>
 			</div>
 		</div>
 		<div id="main">
 			<div id="text">
-				<p>RapGuesser, a rap test webiste by @jcreux. Enjoy !</p>
+				<p>RapGuesser, a rap quiz webiste by @jcreux. Enjoy !</p>
 			</div>
 		</div>
 	</body>

@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 
-<html>
+<body>
 	<head>
+		<link rel="stylesheet" href="/css/main.css" />
 		<style>
 			* {
 				margin: 0px;
@@ -13,46 +14,60 @@
 				white-space: pre-line;
 			}
 			.button {
-				width: 70px;
-				height: 30px;
-				margin: 5px;
-				border-radius: 3px;
-				background: lightgrey;
+				width: 120px;
+				height: 40px;
+				margin: 10px 0px 0px 30px;
+				background: #ffbf00;
+				font-size: 13px;
+				font-family: Georgia, serif;
+				border: 2px solid black;
+				border-radius: 10px;
 			}
 			.button:hover {
 				cursor: pointer;
-				background: white;
+				background: #ffcf40;
 			}
 		</style>
-				<script type="text/javascript">
-					var cpt = 3;
-					var x ;
-					
-					function decompte()
+		<script type="text/javascript">
+			var cpt = 30;
+			var x ;
+
+			function decompte()
+			{
+				if(cpt>=0)
+				{
+					if(cpt>1)
 					{
-						if(cpt>=0)
-						{
-							if(cpt>1)
-							{
-								var sec = " secondes.";
-							} else {
-								var sec = " seconde.";
-							}
-							document.getElementById("Crono").innerHTML = "Redirection dans " + cpt + sec ;
-							cpt-- ;
-							x = setTimeout("decompte()",1000) ;
-						}
-						else
-						{
-							clearTimeout(x) ;
-							document.location.href="/check";
-						}
+						var sec = " secondes.";
+					} else {
+						var sec = " seconde.";
 					}
-				</script>
+					document.getElementById("crono").innerHTML = cpt;
+					cpt-- ;
+					x = setTimeout("decompte()",1000) ;
+				} else {
+					clearTimeout(x) ;
+					document.location.href="/check";
+				}
+			}
+		</script>
 	</head>
 	<body onload="decompte()">
-		<div>
-			<h3><%= quote %></h3>
+		<div id="header">
+			<div id="account_section">
+				<img src="/svg/account_icon.svg" id="account" />
+			</div>
+			<div id="play_section">
+				<a href="/play"><button id="play_button">PLAY</button></a>
+			</div>
+			<div>
+				<img src="/svg/logout.svg" id="title_img" />
+			</div>
+		</div>
+		<div id="game">
+			<div id="crono">
+			</div>
+			<h3 id="quote">"<%= quote %>."</h3>
 			<form action="/check" method="POST">
 				<button class="button" name="button" value="<%= options[0] %>"><%= options[0] %></button>
 				<button class="button" name="button" value="<%= options[1] %>"><%= options[1] %></button>
@@ -60,7 +75,10 @@
 				<button class="button" name="button" value="<%= options[3] %>"><%= options[3] %></button>
 			</form>
 		</div>
-		<div id="Crono">
+		<div id="main">
+			<div id="text">
+				<p>RapGuesser, a rap quiz webiste by @jcreux. Enjoy !</p>
+			</div>
 		</div>
 	</body>
-</html>
+</body>
