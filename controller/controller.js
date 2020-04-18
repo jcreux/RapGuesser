@@ -1,23 +1,68 @@
 const hasha = require("hasha");
 const db = require("../database/db");
+const errors = require("../models/errors");
+
+exports.get404 = (req, res) => {
+	if (req.session.id_user) {
+		res.redirect("/main");
+	} else {
+		res.redirect("/");
+	};
+}
 
 exports.getIndex = (req, res) => {
-	res.render("index");
+	res.render("index", {
+		username: "",
+		email: "",
+		error: ""
+	});
 };
 
 exports.postSignUp = (req, res) => {
-	let form = [req.body.su_login, hasha(req.body.su_password), hasha(req.body.su_cpassword)];
+	let form = [req.body.su_username, req.body.su_email, req.body.su_password, req.body.su_cpassword];
 
-	if (form[1] === form[2]) {
-		db.query("INSERT INTO db_rap.users (`username`, `password`, `admin`) VALUES (?, ?, ?);", [form[0], form[1], '0']);
+    form[1].match(/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{1,4}/g) ? check_email = 0 : check_email = 1;
+	form[2].match(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[.,;:'"`˜#$^+*=!?/\\\-\_\[\]<>(){}|@%&§±]).{8,32}$/g) ? check_password = 0 : check_password = 1;
+
+	for (i = 0; i < form.length; i++) {
+		if (!form[i]) {
+			return (errors.errSignup(req, res, "Veuillez remplir tous les champs."));
+		}
 	}
-	res.redirect("/");
+	if (form[0].length > 32) {
+		return (errors.errSignup(req, res, "Le username saisi est trop long."));
+	} else if (form[1].length > 128) {
+		return (errors.errSignup(req, res, "L'email saisi est trop long."));
+	} else if (form[2].length > 32) {
+		return (errors.errSignup(req, res, "Le mot de passe saisi est trop long."));
+	} else if (check_email === 1) {
+		return (errors.errSignup(req, res, "Mauvais format d'email."));
+	} else if (check_password === 1) {
+		return (errors.errSignup(req, res, "Mauvais format de mot de passe."));
+	} else if (form[2] !== form[3]) {
+		return (errors.errSignup(req, res, "Veuillez saisir deux fois le même mot de passe."));
+	} else {
+		db.query("SELECT username FROM db_rap.users WHERE username = ?;", form[0]).then((result) => {
+			if (result[0].length === 1) {
+				return (errors.errSignup(req, res, "Cet username est déjà utilisé."));
+			} else {
+				db.query("SELECT email FROM db_rap.users WHERE email = ?;", form[1]).then((result) => {
+					if (result[0].length === 1) {
+						return (errors.errSignup(req, res, "Cet email est déjà utilisé."));
+					} else {
+						db.query("INSERT INTO db_rap.users (`username`, `email`, `password`, `admin`) VALUES (?, ?, ?, ?);", [form[0], form[1], hasha(form[2]), '0']);
+						res.redirect("/");
+					}
+				});
+			}
+		});
+	}
 }
 
 exports.postSignIn = (req, res) => {
-	let form = [req.body.si_login, hasha(req.body.si_password)];
+	let form = [req.body.si_username, req.body.si_password];
 
-	db.query("SELECT * FROM db_rap.users WHERE `username` = ? and `password` = ?;", [form[0], form[1]]).then((result) => {
+	db.query("SELECT * FROM db_rap.users WHERE `username` = ? and `password` = ?;", [form[0], hasha(form[1])]).then((result) => {
 		if (result[0].length === 1) {
 			req.session.id_user = result[0][0].id;
 			req.session.admin = result[0][0].admin;

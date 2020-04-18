@@ -1,5 +1,10 @@
 ___DEV___________________________________________________________________
 
+- Finir les pages user (add, check2-3, sections, account, etc ...)
+{
+	sign up (done)
+}
+
 - Faire la deconnexion
 
 - Fichier(s) css
@@ -42,7 +47,7 @@ clean {
 	html / css / js
 	noms des fonctions / fichiers / dossier
 	etc ...
-	faire un site full fr ou full en
+	faire un site full fr ou full en -> messages d'erreurs
 }
 
 ___MORE___________________________________________________________________
@@ -60,6 +65,8 @@ Ideas :
 - Systeme de succes ?
 - Rename manage -> manage quotes / manage users
 - Inscription : pas deux fois le meme login / email
+- Ajout des infos / de la cover / du lecteur audio punchline + spotify
+- Livre d'or
 
 Infos :
 - Start : 24/03/2020

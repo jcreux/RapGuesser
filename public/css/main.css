@@ -50,7 +50,7 @@ body {
 
 #play_button:hover {
 	cursor: pointer;
-	background: #ffcf40;
+	background: #ffd700;
 }
 
 #play_button:focus {
@@ -77,7 +77,7 @@ body {
 }
 
 #main {
-	position: fixed;
+	position: absolute;
 	z-index: 0;
 	bottom: 0px;
 	width: 100%;
@@ -122,6 +122,7 @@ body {
 	width: 200px;
 	height: 25px;
 	margin-top: 15px;
+	padding: 0px 5px;
 	border: 1px solid black;
 	text-align: center;
 	text-decoration: none;
@@ -155,6 +156,7 @@ body {
 
 .submit:hover {
 	cursor: pointer;
+	background: #ffd700;
 }
 
 .submit:focus {
@@ -230,6 +232,7 @@ body {
 
 .footer_sections {
 	width: 150px;
+	height: 20px;
 	margin: 0px auto;
 }
 
@@ -241,6 +244,7 @@ body {
 
 #rapguesser {
 	width: 500px;
+	height: 20px;
 }
 
 #rapguesser:hover {
@@ -250,9 +254,10 @@ body {
 }
 
 .button {
-	width: 120px;
+	min-width: 120px;
 	height: 40px;
 	margin: 10px 0px 0px 30px;
+	padding: 0px 5px;
 	background: lightgrey;
 	font-size: 13px;
 	font-family: Georgia, serif;
@@ -270,10 +275,11 @@ body {
 }
 
 .valid {
-	width: 120px;
+	min-width: 120px;
 	height: 40px;
 	margin: 10px 0px 0px 30px;
-	background: #ffbf00;;
+	padding: 0px 5px;
+	background: #ffbf00;
 	font-size: 13px;
 	font-family: Georgia, serif;
 	border: 2px solid black;
@@ -285,9 +291,10 @@ body {
 }
 
 .unvalid {
-	width: 120px;
+	min-width: 120px;
 	height: 40px;
 	margin: 10px 0px 0px 30px;
+	padding: 0px 5px;
 	background: rgb(108, 122, 136);
 	font-size: 13px;
 	font-family: Georgia, serif;
@@ -340,4 +347,13 @@ body {
 	width: 500px;
 	margin: 60px auto 0px auto;
 	border: 1px solid black;
+}
+
+#su_error {
+	width: 250px;
+	margin: 25px auto 0px auto;
+	color: black;
+	font-family: Georgia, serif;
+	font-size: 13px;
+	font-weight: bold;
 }
